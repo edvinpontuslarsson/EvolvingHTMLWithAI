@@ -1,0 +1,54 @@
+#hero {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  position: relative; /* Enable positioning for child elements */
+  height: 100vh; /* Full viewport height for the wrapper */
+  padding: 10px; /* Optional padding */
+  box-sizing: border-box;
+}
+
+#hero-heading {
+  writing-mode: vertical-rl; /* Sets text direction to vertical, right-to-left */
+  text-orientation: upright; /* Ensures characters remain upright */
+  font-size: clamp(2rem, 5vw, 8rem); /* Responsive text size */
+  margin: 0; /* Remove default margin for better alignment */
+  padding: 10px; /* Add padding for spacing */
+  border: 2px solid black; /* Optional: border for visual emphasis */
+  position: absolute; /* Position the text box relative to the container */
+  top: 20px; /* Position from the top */
+  right: 10px; /* Position from the right */
+}
+
+#dragon-image {
+  max-height: 80%; /* Keep image size manageable on large screens */
+  width: auto; /* Maintain aspect ratio */
+  position: absolute; /* Position the text box relative to the container */
+  top: 20px; /* Position from the top */
+}
+
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column; /* Stack items vertically for smaller screens */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center items horizontally */
+  }
+
+  #dragon-image {
+    display: none; /* Hide the image on smaller screens */
+  }
+
+  #hero-heading {
+    writing-mode: vertical-rl; /* Keep vertical writing on mobile */
+    text-orientation: upright; /* Maintain upright text */
+    font-size: clamp(
+      2rem,
+      7vw,
+      6rem
+    ); /* Adjust font size for smaller screens */
+    text-align: center; /* Center-align text */
+    top: auto; /* Reset position for mobile */
+    right: auto; /* Reset position for mobile */
+    position: static; /* Default positioning for mobile */
+  }
+}
